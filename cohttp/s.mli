@@ -44,6 +44,8 @@ module type Http_io = sig
 
   val is_form: t -> bool
   val read_form : t -> IO.ic -> (string * string list) list IO.t
+  val is_multipart_form: t -> bool
+  val read_multipart_form : t -> IO.ic -> (string * string list) list IO.t
 
   val write_header : t -> IO.oc -> unit IO.t
   val write_body : t -> IO.oc -> string -> unit IO.t

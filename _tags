@@ -36,6 +36,7 @@
 <cohttp/*.ml{,i}>: pkg_fieldslib
 <cohttp/*.ml{,i}>: pkg_fieldslib.syntax
 <cohttp/*.ml{,i}>: pkg_re.emacs
+<cohttp/*.ml{,i}>: pkg_re.pcre
 <cohttp/*.ml{,i}>: pkg_sexplib
 <cohttp/*.ml{,i}>: pkg_sexplib.syntax
 <cohttp/*.ml{,i}>: pkg_stringext
@@ -53,6 +54,7 @@
 <lwt/*.ml{,i}>: pkg_lwt.syntax
 <lwt/*.ml{,i}>: pkg_lwt.unix
 <lwt/*.ml{,i}>: pkg_re.emacs
+<lwt/*.ml{,i}>: pkg_re.pcre
 <lwt/*.ml{,i}>: pkg_sexplib
 <lwt/*.ml{,i}>: pkg_sexplib.syntax
 <lwt/*.ml{,i}>: pkg_stringext
@@ -70,6 +72,7 @@
 <js/*.ml{,i}>: pkg_lwt
 <js/*.ml{,i}>: pkg_lwt.syntax
 <js/*.ml{,i}>: pkg_re.emacs
+<js/*.ml{,i}>: pkg_re.pcre
 <js/*.ml{,i}>: pkg_sexplib
 <js/*.ml{,i}>: pkg_sexplib.syntax
 <js/*.ml{,i}>: pkg_stringext
@@ -84,6 +87,7 @@
 <async/*.ml{,i}>: pkg_fieldslib
 <async/*.ml{,i}>: pkg_fieldslib.syntax
 <async/*.ml{,i}>: pkg_re.emacs
+<async/*.ml{,i}>: pkg_re.pcre
 <async/*.ml{,i}>: pkg_sexplib
 <async/*.ml{,i}>: pkg_sexplib.syntax
 <async/*.ml{,i}>: pkg_stringext
@@ -101,6 +105,7 @@
 <lib_test/test_parser.{native,byte}>: pkg_lwt.unix
 <lib_test/test_parser.{native,byte}>: pkg_oUnit
 <lib_test/test_parser.{native,byte}>: pkg_re.emacs
+<lib_test/test_parser.{native,byte}>: pkg_re.pcre
 <lib_test/test_parser.{native,byte}>: pkg_sexplib
 <lib_test/test_parser.{native,byte}>: pkg_sexplib.syntax
 <lib_test/test_parser.{native,byte}>: pkg_stringext
@@ -116,6 +121,7 @@
 <lib_test/test_accept.{native,byte}>: pkg_fieldslib.syntax
 <lib_test/test_accept.{native,byte}>: pkg_oUnit
 <lib_test/test_accept.{native,byte}>: pkg_re.emacs
+<lib_test/test_accept.{native,byte}>: pkg_re.pcre
 <lib_test/test_accept.{native,byte}>: pkg_sexplib
 <lib_test/test_accept.{native,byte}>: pkg_sexplib.syntax
 <lib_test/test_accept.{native,byte}>: pkg_stringext
@@ -128,6 +134,7 @@
 <lib_test/test_header.{native,byte}>: pkg_fieldslib.syntax
 <lib_test/test_header.{native,byte}>: pkg_oUnit
 <lib_test/test_header.{native,byte}>: pkg_re.emacs
+<lib_test/test_header.{native,byte}>: pkg_re.pcre
 <lib_test/test_header.{native,byte}>: pkg_sexplib
 <lib_test/test_header.{native,byte}>: pkg_sexplib.syntax
 <lib_test/test_header.{native,byte}>: pkg_stringext
@@ -145,6 +152,7 @@
 <lib_test/test_net_lwt.{native,byte}>: pkg_lwt.unix
 <lib_test/test_net_lwt.{native,byte}>: pkg_oUnit
 <lib_test/test_net_lwt.{native,byte}>: pkg_re.emacs
+<lib_test/test_net_lwt.{native,byte}>: pkg_re.pcre
 <lib_test/test_net_lwt.{native,byte}>: pkg_sexplib
 <lib_test/test_net_lwt.{native,byte}>: pkg_sexplib.syntax
 <lib_test/test_net_lwt.{native,byte}>: pkg_stringext
@@ -164,6 +172,7 @@
 <lib_test/test_net_lwt_google.{native,byte}>: pkg_lwt.syntax
 <lib_test/test_net_lwt_google.{native,byte}>: pkg_lwt.unix
 <lib_test/test_net_lwt_google.{native,byte}>: pkg_re.emacs
+<lib_test/test_net_lwt_google.{native,byte}>: pkg_re.pcre
 <lib_test/test_net_lwt_google.{native,byte}>: pkg_sexplib
 <lib_test/test_net_lwt_google.{native,byte}>: pkg_sexplib.syntax
 <lib_test/test_net_lwt_google.{native,byte}>: pkg_stringext
@@ -183,6 +192,7 @@
 <lib_test/test_net_lwt_lastminute.{native,byte}>: pkg_lwt.syntax
 <lib_test/test_net_lwt_lastminute.{native,byte}>: pkg_lwt.unix
 <lib_test/test_net_lwt_lastminute.{native,byte}>: pkg_re.emacs
+<lib_test/test_net_lwt_lastminute.{native,byte}>: pkg_re.pcre
 <lib_test/test_net_lwt_lastminute.{native,byte}>: pkg_sexplib
 <lib_test/test_net_lwt_lastminute.{native,byte}>: pkg_sexplib.syntax
 <lib_test/test_net_lwt_lastminute.{native,byte}>: pkg_stringext
@@ -202,6 +212,7 @@
 <lib_test/test_net_lwt_server.{native,byte}>: pkg_lwt.syntax
 <lib_test/test_net_lwt_server.{native,byte}>: pkg_lwt.unix
 <lib_test/test_net_lwt_server.{native,byte}>: pkg_re.emacs
+<lib_test/test_net_lwt_server.{native,byte}>: pkg_re.pcre
 <lib_test/test_net_lwt_server.{native,byte}>: pkg_sexplib
 <lib_test/test_net_lwt_server.{native,byte}>: pkg_sexplib.syntax
 <lib_test/test_net_lwt_server.{native,byte}>: pkg_stringext
@@ -221,6 +232,7 @@
 <lib_test/test_net_lwt_multi_get.{native,byte}>: pkg_lwt.syntax
 <lib_test/test_net_lwt_multi_get.{native,byte}>: pkg_lwt.unix
 <lib_test/test_net_lwt_multi_get.{native,byte}>: pkg_re.emacs
+<lib_test/test_net_lwt_multi_get.{native,byte}>: pkg_re.pcre
 <lib_test/test_net_lwt_multi_get.{native,byte}>: pkg_sexplib
 <lib_test/test_net_lwt_multi_get.{native,byte}>: pkg_sexplib.syntax
 <lib_test/test_net_lwt_multi_get.{native,byte}>: pkg_stringext
@@ -240,6 +252,7 @@
 <lib_test/test_net_lwt_client_and_server.{native,byte}>: pkg_lwt.syntax
 <lib_test/test_net_lwt_client_and_server.{native,byte}>: pkg_lwt.unix
 <lib_test/test_net_lwt_client_and_server.{native,byte}>: pkg_re.emacs
+<lib_test/test_net_lwt_client_and_server.{native,byte}>: pkg_re.pcre
 <lib_test/test_net_lwt_client_and_server.{native,byte}>: pkg_sexplib
 <lib_test/test_net_lwt_client_and_server.{native,byte}>: pkg_sexplib.syntax
 <lib_test/test_net_lwt_client_and_server.{native,byte}>: pkg_stringext
@@ -262,6 +275,7 @@
 <lib_test/test_net_async.{native,byte}>: pkg_fieldslib.syntax
 <lib_test/test_net_async.{native,byte}>: pkg_oUnit
 <lib_test/test_net_async.{native,byte}>: pkg_re.emacs
+<lib_test/test_net_async.{native,byte}>: pkg_re.pcre
 <lib_test/test_net_async.{native,byte}>: pkg_sexplib
 <lib_test/test_net_async.{native,byte}>: pkg_sexplib.syntax
 <lib_test/test_net_async.{native,byte}>: pkg_stringext
@@ -278,6 +292,7 @@
 <lib_test/test_net_async_http10.{native,byte}>: pkg_fieldslib.syntax
 <lib_test/test_net_async_http10.{native,byte}>: pkg_oUnit
 <lib_test/test_net_async_http10.{native,byte}>: pkg_re.emacs
+<lib_test/test_net_async_http10.{native,byte}>: pkg_re.pcre
 <lib_test/test_net_async_http10.{native,byte}>: pkg_sexplib
 <lib_test/test_net_async_http10.{native,byte}>: pkg_sexplib.syntax
 <lib_test/test_net_async_http10.{native,byte}>: pkg_stringext
@@ -294,6 +309,7 @@
 <lib_test/test_net_async_multi_get.{native,byte}>: pkg_fieldslib.syntax
 <lib_test/test_net_async_multi_get.{native,byte}>: pkg_oUnit
 <lib_test/test_net_async_multi_get.{native,byte}>: pkg_re.emacs
+<lib_test/test_net_async_multi_get.{native,byte}>: pkg_re.pcre
 <lib_test/test_net_async_multi_get.{native,byte}>: pkg_sexplib
 <lib_test/test_net_async_multi_get.{native,byte}>: pkg_sexplib.syntax
 <lib_test/test_net_async_multi_get.{native,byte}>: pkg_stringext
@@ -310,6 +326,7 @@
 <lib_test/test_net_async_server.{native,byte}>: pkg_fieldslib.syntax
 <lib_test/test_net_async_server.{native,byte}>: pkg_oUnit
 <lib_test/test_net_async_server.{native,byte}>: pkg_re.emacs
+<lib_test/test_net_async_server.{native,byte}>: pkg_re.pcre
 <lib_test/test_net_async_server.{native,byte}>: pkg_sexplib
 <lib_test/test_net_async_server.{native,byte}>: pkg_sexplib.syntax
 <lib_test/test_net_async_server.{native,byte}>: pkg_stringext
@@ -330,6 +347,7 @@
 <bin/cohttp_server_async.{native,byte}>: pkg_fieldslib
 <bin/cohttp_server_async.{native,byte}>: pkg_fieldslib.syntax
 <bin/cohttp_server_async.{native,byte}>: pkg_re.emacs
+<bin/cohttp_server_async.{native,byte}>: pkg_re.pcre
 <bin/cohttp_server_async.{native,byte}>: pkg_sexplib
 <bin/cohttp_server_async.{native,byte}>: pkg_sexplib.syntax
 <bin/cohttp_server_async.{native,byte}>: pkg_stringext
@@ -352,6 +370,7 @@
 <bin/cohttp_server_lwt.{native,byte}>: pkg_lwt.syntax
 <bin/cohttp_server_lwt.{native,byte}>: pkg_lwt.unix
 <bin/cohttp_server_lwt.{native,byte}>: pkg_re.emacs
+<bin/cohttp_server_lwt.{native,byte}>: pkg_re.pcre
 <bin/cohttp_server_lwt.{native,byte}>: pkg_sexplib
 <bin/cohttp_server_lwt.{native,byte}>: pkg_sexplib.syntax
 <bin/cohttp_server_lwt.{native,byte}>: pkg_stringext
@@ -369,6 +388,7 @@
 <bin/*.ml{,i}>: pkg_lwt.syntax
 <bin/*.ml{,i}>: pkg_lwt.unix
 <bin/*.ml{,i}>: pkg_re.emacs
+<bin/*.ml{,i}>: pkg_re.pcre
 <bin/*.ml{,i}>: pkg_sexplib
 <bin/*.ml{,i}>: pkg_sexplib.syntax
 <bin/*.ml{,i}>: pkg_stringext
@@ -385,6 +405,7 @@
 <examples/async/hello_world.{native,byte}>: pkg_fieldslib
 <examples/async/hello_world.{native,byte}>: pkg_fieldslib.syntax
 <examples/async/hello_world.{native,byte}>: pkg_re.emacs
+<examples/async/hello_world.{native,byte}>: pkg_re.pcre
 <examples/async/hello_world.{native,byte}>: pkg_sexplib
 <examples/async/hello_world.{native,byte}>: pkg_sexplib.syntax
 <examples/async/hello_world.{native,byte}>: pkg_stringext

@@ -191,6 +191,9 @@ let get_authorization headers =
 let is_form headers =
   get_media_type headers = (Some "application/x-www-form-urlencoded")
 
+let is_multipart_form headers =
+  get_media_type headers = (Some "multipart/form-data")
+
 let prepend_user_agent headers user_agent =
   let k = "user-agent" in
   match get headers k with

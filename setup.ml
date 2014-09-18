@@ -7016,6 +7016,7 @@ let setup_t =
                       bs_build_depends =
                         [
                            FindlibPackage ("re.emacs", None);
+                           FindlibPackage ("re.pcre", None);
                            FindlibPackage ("stringext", None);
                            FindlibPackage
                              ("uri",

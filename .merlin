@@ -15,6 +15,7 @@ PKG async
 PKG uri
 PKG re
 PKG re.emacs
+PKG re.pcre
 PKG stringext
 PKG fieldslib
 PKG fieldslib.syntax

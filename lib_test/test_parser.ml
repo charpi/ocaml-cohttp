@@ -54,6 +54,31 @@ Content-Length: 32
 
 home=Cosby&favorite+flavor=flies"
 
+let post_multipart_req =
+"POST /path/script.cgi HTTP/1.0
+From: frog@jmarshall.com
+User-Agent: HTTPTool/1.0
+Content-Type: multipart/form-data; boundary=-----------------------------9051914041544843365972754266
+Content-Length: 554
+
+-----------------------------9051914041544843365972754266
+Content-Disposition: form-data; name=\"test\"
+
+text default
+-----------------------------9051914041544843365972754266
+Content-Disposition: form-data; name=\"file1\"; filename=\"a.txt\"
+Content-Type: text/plain
+
+Content of a.txt.
+
+-----------------------------9051914041544843365972754266
+Content-Disposition: form-data; name=\"file2\"; filename=\"a.html\"
+Content-Type: text/html
+
+<!DOCTYPE html><title>Content of a.html.</title>
+
+-----------------------------9051914041544843365972754266--"
+
 let post_data_req =
 "POST /path/script.cgi HTTP/1.0
 From: frog@jmarshall.com
@@ -157,6 +182,25 @@ let post_form_parse () =
     (* multiple requests should still work *)
     assert_equal ["Cosby"] (List.assoc "home" params);
     return ()
+  | _ -> assert false
+
+let post_multipart_parse () =
+  let open Cohttp in
+  let open Cohttp_lwt_unix in
+  let ic = ic_of_buffer (Lwt_bytes.of_string post_multipart_req) in
+  Request.read ic >>= function
+  | `Ok req ->
+     let headers = Request.headers req in
+     assert_equal ~msg:"Content-type"  (Header.get headers "content-type")
+		  (Some "multipart/form-data; boundary=-----------------------------9051914041544843365972754266");
+     assert_equal ~msg:"Media type"  (Header.get_media_type headers)
+		  (Some "multipart/form-data");
+     assert_equal ~msg:"Is it a form ?" false (Request.is_form req);
+     assert_equal ~msg:"Is is a multipart form ?" true (Request.is_multipart_form req);
+     Request.read_multipart_form req ic >>= fun params ->
+     let line = (List.hd (List.assoc "test" params)) in
+     assert_equal ~msg:"Is it the correct content ?" "text default" line;
+     return ()
   | _ -> assert false
 
 let post_data_parse () =
@@ -283,6 +327,7 @@ let test_cases =
     "basic_req_parse", basic_req_parse;
     "req_parse", req_parse;
     "post_form_parse", post_form_parse;
+    "post_multipart_parse", post_multipart_parse;
     "post_data_parse",  post_data_parse;
     "post_chunked_parse", post_chunked_parse;
     "basic_res_parse 1", (basic_res_parse basic_res);

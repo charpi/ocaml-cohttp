@@ -46,4 +46,41 @@ module Make(IO : S.IO) = struct
     let encoding = Header.get_transfer_encoding headers in
     Transfer_IO.to_string encoding ic >>= fun body ->
     return (Uri.query_of_encoded body)
+
+  let parse_multipart_form headers ic = 
+    let content = Header.get headers "content-type" in
+    let encoding = Header.get_transfer_encoding headers in
+    Transfer_IO.to_string Unknown ic >>= fun body ->
+    match content with 
+    | None ->
+       return ([])
+    | Some str ->
+       let rec filter_content (str_list :bytes list) =
+	 let first = List.hd str_list in
+	 if Bytes.length first < 8 then 
+	   List.tl str_list
+	 else
+	   match (Bytes.sub first 0 8) with
+	   | "Content-" -> filter_content (List.tl str_list)
+	   | _ -> str_list in
+       let parse_part part =
+	 let lines = Stringext.split ~on:'\n' part in
+	 let re = Re_emacs.re ~case:true "Content-Disposition: form-data; name=\"\(.[^\"]*\)\".*" in
+	 let subs = Re.exec ~pos:0 (Re.(compile (seq ([re])))) (List.hd lines) in
+	 let name = (Re.get subs 1) in
+	 let filtered = filter_content lines in
+	 (name, filtered) in
+       let boundary = Stringext.split ~on:';' str 
+		      |> List.tl |> List.hd
+		      |> Stringext.split ~on:'='
+		      |> List.tl |> List.hd in
+       let reg_exp = Re_perl.re (String.concat "" [boundary;"\n"]) in
+       let compiled = Re.compile reg_exp in
+       let split = Re_pcre.split compiled body in
+       let parts = split
+		   |> List.tl
+		   |> List.map parse_part
+       in
+       return (parts)
 end
+
